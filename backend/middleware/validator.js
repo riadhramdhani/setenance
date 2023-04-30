@@ -4,6 +4,7 @@ const registerRules = [
   body("username", " username is required").notEmpty(),
   body("email", "email is required").isEmail(),
   body("password", " password must have 6 character").isLength({ min: 6 }),
+  body("usertype", " usertype is required").notEmpty(),
 ];
 
 const loginRules = [
