@@ -1,0 +1,17 @@
+.form{
+    width: 350px;
+    height: 400px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8)50%,rgba(0, 0, 0, 0.329)50%);
+    position: absolute;
+    top: 100px;
+    left: 1000px;
+    transform: translate(0%,-5%);
+    border-radius: 10px;
+    padding: 25px;
+}
+.re{
+    background-image: url("https://media.istockphoto.com/id/187185984/photo/service-process.jpg?s=1024x1024&w=is&k=20&c=H1wtuyAl-gNrb6MiYAw8ZIWvSLXexX513fV2OuZbnDs=");
+}
+p{
+    color:rgb(133, 3, 255) 
+}
