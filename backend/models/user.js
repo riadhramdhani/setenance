@@ -15,9 +15,17 @@ const userSchema = new mongoose.Schema({
     type: String,
     require: true,
   },
-  usertype: {
+  profession: {
     type:String,
-    require:true,
+    enum:["visiteur","worker"],
+    
+  }
+  ,
+  role: {
+    type:String,
+    enum:["user","admin"],
+    default : "user"
+    
   }
 });
 
