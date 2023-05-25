@@ -26,7 +26,8 @@ const userSchema = new mongoose.Schema({
     enum:["user","admin"],
     default : "user"
     
-  }
+  },
+  imgUrl:String
 });
 
 module.exports = mongoose.model("User", userSchema);

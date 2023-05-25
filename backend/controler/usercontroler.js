@@ -37,3 +37,12 @@ exports.getoneuser = async(req,res)=>{
         res.status(500).send({msg:"server error"})
     }
 }
+exports.updateprofileimg= async(req,res)=>{
+    try {
+        await User.findByIdAndUpdate(req.user.id,{$set: {imgUrl:req.file.filename}})
+        res.send("img uploaded with success")
+        
+    } catch (error) {
+        res.status(500).send({msg:"server error"})
+    }
+}

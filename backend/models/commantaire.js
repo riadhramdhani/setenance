@@ -17,6 +17,10 @@ const comSchema = new mongoose.Schema({
   rate: {
     type:Number,
   },
+  createdAt: {
+    type: Date,
+    default: Date.now
+  }
  
 
    

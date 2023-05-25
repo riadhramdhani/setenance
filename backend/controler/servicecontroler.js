@@ -12,7 +12,7 @@ exports.addService= async(req,res)=>{
     }
 }
 exports.getAllservice = async(req,res)=>{
-    try { const services = await Service.find().populate("userId",["username"])
+    try { const services = await Service.find().populate("userId",["username"]);
     res.status(200).json({msg:"allservice",services})
         
     } catch (error) {
