@@ -22,7 +22,7 @@ exports.getAllservice = async(req,res)=>{
 exports.deleteservice = async(req,res)=>{
     const{id}=req.params
     try { await Service.findByIdAndDelete(id)
-    res.status(200).json("service deleted")
+    res.status(200).json({msg:"service deleted"})
         
     } catch (error) {
         res.status(500).send({msg:"server error"})
@@ -39,9 +39,9 @@ exports.updateservice = async(req,res)=>{
 }
 exports.getoneservice = async(req,res)=>{
     const{id}=req.params
-    try {const service =  await Service.findById(id).populate("userId",["username"])
-    res.status(200).json({msg:"service found",service})
-        
+    try {
+    const service =  await Service.findById(id).populate("userId",["username"])
+    res.status(200).send({msg:"service found",service})
     } catch (error) {
         res.status(500).send({msg:"server error"})
     }
