@@ -66,24 +66,26 @@ export const registerUser = createAsyncThunk(
     },
     extraReducers(builder) {
       builder
-        .addCase(registerUser.pending, (state, { payload }) => {
-          state.loading = true;
-        })
-        .addCase(registerUser.fulfilled, (state, { payload }) => {
-          state.user = payload.user;
-          state.auth = true;
-          state.loading = false;
-          localStorage.setItem("token", payload.token);
-          toast.success(payload.msg)
-        })
-        .addCase(registerUser.rejected, (state, { payload }) => {
-          state.user = null;
-          state.auth = false;
-          state.loading = false;
-          payload.forEach((error) => {toast.error(error.msg)
-            
-          });
-        })
+      //registre
+      .addCase(registerUser.pending, (state, { payload }) => {
+        state.loading = true;
+      })
+      .addCase(registerUser.fulfilled, (state, { payload }) => {
+        state.user = payload.user;
+        state.auth = true;
+        state.loading = false;
+        localStorage.setItem("token", payload.token);
+        toast.success(payload.msg)
+      })
+      .addCase(registerUser.rejected, (state, { payload }) => {
+        state.user = null;
+        state.auth = false;
+        state.loading = false;
+        payload.forEach((error) => {toast.error(error.msg)
+          
+        });
+      })
+        
         //login
         .addCase(loginUser.pending, (state, { payload }) => {
           state.loading = true;

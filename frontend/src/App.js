@@ -12,6 +12,7 @@ import { currentUser } from "./redux/authSlice";
 import Privateroutes from "./component/Privateroutes";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Add_Edit from "./pages/Add_Edit";
 
 function App() {
   const dispatch= useDispatch()
@@ -32,8 +33,9 @@ function App() {
       <Route path="/profile" element={<Privateroutes ><Profile/></Privateroutes>} />
       <Route path="/cardservice" element={<Privateroutes ><Cardservice/></Privateroutes>} />
       <Route path="/*" element={<Notfound />} />
+      <Route path="/addedit" element={<Add_Edit />} />
     </Routes>
-    <ToastContainer />
+    <ToastContainer autoClose={1000} />
     </>
     
   );

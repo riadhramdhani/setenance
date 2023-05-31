@@ -9,6 +9,7 @@ import { toast } from "react-toastify";
 import Cardchat from "../../component/Cardchat"
 
 
+
 function Profile() {
   
   const user = useSelector((state) => state.auth.user);
@@ -35,6 +36,7 @@ function Profile() {
 
   return (
     <div>
+      
        <h2>Profile</h2>
        <div>
         

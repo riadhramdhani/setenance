@@ -3,6 +3,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Box, Flex, Text, Input, Button, Spacer, VStack } from '@chakra-ui/react';
 import { fetchMessages, sendMessage } from '../redux/chatSlice';
 import { io } from 'socket.io-client';
+import {FiSend} from "react-icons/fi"
+import "./monia.css"
 
 const Chat = ({ senderId, receiverId }) => {
   const [message, setMessage] = useState('');
@@ -48,7 +50,8 @@ const handleSubmit = (e) => {
   };
 
   return (
-    <Box p={4}>
+    <Box p={4} className='chatbox'>
+      <div className="chatbox-header">Messenger</div>
       <Flex direction="column" height="100%">
         <Box flex={1} overflowY="scroll">
           <VStack spacing={4} align="start">
@@ -59,16 +62,17 @@ const handleSubmit = (e) => {
             ))}
           </VStack>
         </Box>
-        <Box>
+        
+        <Box className='chatbox-message'>
           <form onSubmit={handleSubmit}>
             <Flex align="center">
               <Input
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
-                placeholder="Type a message..."
-              />
+                placeholder="message..."
+             className='chatbox-input' />
               <Spacer />
-              <Button type="submit">Send</Button>
+              <Button type="submit" className='chatbox-button'><FiSend/></Button>
             </Flex>
           </form>
         </Box>
