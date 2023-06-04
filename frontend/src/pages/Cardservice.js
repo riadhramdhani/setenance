@@ -83,14 +83,14 @@ function Cardservice({service}) {
       <Card.Text>{service?.description} </Card.Text>
     </Card.Body>
     <Add_Edit service={service}/> 
-    <Button variant="danger" onClick={()=>handleDelete(service?._id)}>Delete</Button>{' '}
+    <Button variant="danger" onClick={()=>handleDelete(service?._id)}>Delete</Button>
     </Card>
    </div>
   
   </div>
       ))}
       
-      <Button variant="primary" onClick={handletogglefalse} >Add_Service</Button>{' '}
+      <Button variant="primary" onClick={handletogglefalse} >Add_Service</Button>
      
   </div>
   
